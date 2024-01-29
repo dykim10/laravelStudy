@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +33,16 @@ require __DIR__.'/auth.php';
 
 route::get('/articles/create', function(){
     return view('articles/create');
+});
+
+route::post('/articles', function(Request $request){
+    //비어있지않고, 문자열이고, 255자를 넘으면 안된다.
+    $request->validate([
+        'contents' => [
+            'required',
+            'string',
+            'max:255'
+        ]
+    ]);
+    return 'hello';
 });
