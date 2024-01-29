@@ -1,13 +1,6 @@
 <br/>
 <br/>
 
-<p align="center">
-<img src="https://files.cloudtype.io/logo/cloudtype-logo-horizontal-black.png" width="50%" alt="Cloudtype"/>
-</p>
-
-<br/>
-<br/>
-
 # 직접 해보며 맛보는 라라벨
 <br/>
 <br/>
