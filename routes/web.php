@@ -29,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+route::get('/articles/create', function(){
+    return view('articles/create');
+});
