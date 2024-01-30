@@ -8,7 +8,10 @@
             <h1 class="text-2xl">글쓰기</h1>
             <form action="/articles" method="POST" class="mt-3">
                 @csrf
-                <input type="text" name="contents" class="block w-auto mb-2 rounded">
+                <input type="text" name="body" class="block w-auto mb-3 rounded">
+                @error('body')
+                <p class="text-xs">{{ $message }}</p>
+                @enderror
                 <button class="py-1 px-3 w-full text-xs rounded-full">저장하기</button>
             </form>
         </div>
