@@ -27,12 +27,12 @@ require __DIR__.'/auth.php';
 
 Route::post('/articles', function(Request $request){
 
-	print_r($request);
+//	echo "<pre>";
+//	print_r($request);
+//	echo "</pre>";
 	//비어있지않고, 문자열이고, 255자를 넘으면 안된다.
-	$request->validate([
-		'body' => [
-			'required|string|max:255'
-		]
+	$credentials = $request->validate([
+		'body' => 'required|string|max:255'
 	]);
 	//        $credentials = $request->validate([
 	//            'email' => 'required|email',
