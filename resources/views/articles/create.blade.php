@@ -6,9 +6,11 @@
     <body>
         <div class="container p-5">
             <h1 class="text-2xl">글쓰기</h1>
-            <form action="/articles" method="POST" class="mt-3">
+            <form action="/articles/save" method="post" class="mt-3" >
                 @csrf
-                <input type="text" name="body" class="block w-auto mb-3 rounded">
+                <label>
+                    <input type="text" name="body" class="block w-auto mb-3 rounded">
+                </label>
                 @error('body')
                 <p class="text-xs">{{ $message }}</p>
                 @enderror
