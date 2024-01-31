@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Login;
 
-use App\Http\Controllers\Controller;
+Use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginRegisterController extends Controller
 {
