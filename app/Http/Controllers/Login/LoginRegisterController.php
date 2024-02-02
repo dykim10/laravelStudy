@@ -13,7 +13,7 @@ class LoginRegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except([
-            'logout'
+            'logout', 'dashboard'
         ]);
     }
 
@@ -66,7 +66,7 @@ class LoginRegisterController extends Controller
             'email' => 'Your provided credentials do not match in our records.',
         ])->onlyInput('email');
 
-    } 
+    }
     
     public function dashboard()
     {
@@ -79,7 +79,7 @@ class LoginRegisterController extends Controller
             ->withErrors([
             'email' => 'Please login to access the dashboard.',
         ])->onlyInput('email');
-    } 
+    }
 
 
     public function logout(Request $request)
@@ -89,5 +89,5 @@ class LoginRegisterController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login')
             ->withSuccess('You have logged out successfully!');;
-    }    
+    }
 }
