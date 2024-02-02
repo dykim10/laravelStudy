@@ -13,7 +13,7 @@ class LoginRegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except([
-            'logout', 'dashboard'
+            'logout'
         ]);
     }
 
@@ -74,7 +74,7 @@ class LoginRegisterController extends Controller
         {
             return view('auth.dashboard');
         }
-        
+	
         return redirect()->route('login')
             ->withErrors([
             'email' => 'Please login to access the dashboard.',
